@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Rocket Optimizer</title>
+
+<style>
+body{
+font-family:Arial;
+background:radial-gradient(circle at top,#0b0f1f,#05060a);
+color:#fff;
+margin:0;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+
+/* INTRO */
+#intro{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:radial-gradient(circle at center,#0d1b3a,#05060a);
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+z-index:9999;
+}
+
+#intro h1{
+font-size:52px;
+color:#7c4dff;
+text-shadow:0 0 20px #7c4dff, 0 0 40px #00e5ff;
+}
+
+#intro p{
+margin-top:10px;
+color:#bcdcff;
+text-align:center;
+max-width:420px;
+}
+
+#intro button{
+margin-top:20px;
+padding:14px 30px;
+border:none;
+background:linear-gradient(90deg,#7c4dff,#00e5ff);
+color:#fff;
+border-radius:12px;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* NAV */
+header{
+background:rgba(10,15,30,0.8);
+padding:15px;
+text-align:center;
+border-bottom:2px solid #7c4dff;
+position:sticky;
+top:0;
+z-index:10;
+}
+
+header a{
+color:#00e5ff;
+margin:12px;
+cursor:pointer;
+font-weight:bold;
+text-transform:uppercase;
+}
+
+/* SECCIONES */
+.page{
+display:none;
+max-width:850px;
+margin:auto;
+margin-top:40px;
+background:rgba(15,20,40,0.8);
+padding:30px;
+border-radius:16px;
+}
+
+.active{
+display:block;
+}
+
+/* PACKS */
+.pack{
+background:#121a33;
+padding:20px;
+margin:12px 0;
+border-radius:14px;
+cursor:pointer;
+border:1px solid rgba(0,229,255,0.3);
+}
+
+/* BOTONES */
+.buy{
+background:linear-gradient(90deg,#7c4dff,#00e5ff);
+padding:15px;
+margin-top:20px;
+text-align:center;
+cursor:pointer;
+border-radius:12px;
+font-weight:bold;
+}
+
+img{
+width:100%;
+margin-top:20px;
+border-radius:12px;
+display:none;
+}
+
+/* RESEÑAS */
+.review-box{
+background:rgba(10,15,30,0.9);
+border:1px solid #7c4dff;
+padding:25px;
+border-radius:14px;
+}
+
+/* CONTACTO */
+.contact-box{
+background:rgba(10,15,30,0.9);
+border:1px solid #00e5ff;
+padding:25px;
+border-radius:14px;
+text-align:center;
+}
+
+.contact-tag{
+margin-top:10px;
+padding:10px;
+border-radius:10px;
+background:rgba(124,77,255,0.15);
+}
+
+.contact-discord{
+color:#00e5ff;
+font-weight:bold;
+margin-top:15px;
+}
+
+/* 📱 MOBILE FIX REAL */
+@media (max-width:768px){
+
+#intro h1{
+font-size:34px;
+}
+
+#intro button{
+width:80%;
+}
+
+.page{
+width:92%;
+padding:18px;
+}
+
+header{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:8px;
+}
+
+header a{
+font-size:13px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+<h1>ROCKET OPTIMIZER</h1>
+<p>AUMENTA FPS • REDUCE INPUT LAG • RENDIMIENTO COMPETITIVO</p>
+<button onclick="goPacks()">ENTRAR A LA TIENDA</button>
+</div>
+
+<header>
+<a onclick="show('inicio')">Inicio</a>
+<a onclick="show('packs')">Packs</a>
+<a onclick="show('reviews')">Reseñas</a>
+<a onclick="show('faq')">FAQ</a>
+<a onclick="show('discord')">Discord</a>
+<a onclick="show('consultas')">Contacto</a>
+</header>
+
+<!-- INICIO -->
+<div id="inicio" class="page active">
+<div style="text-align:center;">
+<h2>MEJORA DE RENDIMIENTO COMPETITIVO</h2>
+<p>Optimización para FPS, latencia y rendimiento en juegos.</p>
+
+<div style="
+margin-top:20px;
+padding:20px;
+background:rgba(124,77,255,0.1);
+border:1px solid #7c4dff;
+border-radius:12px;">
+🔥 Menos input lag • Más FPS • Rendimiento estable
+</div>
+</div>
+</div>
+
+<!-- PACKS -->
+<div id="packs" class="page">
+<div class="pack" onclick="show('od')">⚡ Pack 0 Delay — 5€</div>
+<div class="pack" onclick="show('elite')">💎 Pack Elite — 10€</div>
+<div class="pack" onclick="show('plus')">👑 Pack Elite Plus — 15€</div>
+</div>
+
+<!-- PRODUCTOS -->
+<div id="od" class="page">
+<h2>0 Delay</h2>
+<div class="buy" onclick="mostrar('img1')">COMPRAR</div>
+<img id="img1" src="https://i.postimg.cc/JzRzpX7w/IMG-4302.png">
+</div>
+
+<div id="elite" class="page">
+<h2>Elite Pack</h2>
+<div class="buy" onclick="mostrar('img2')">COMPRAR</div>
+<img id="img2" src="https://i.postimg.cc/L6tskDpD/IMG-4301.png">
+</div>
+
+<div id="plus" class="page">
+<h2>Elite Plus</h2>
+<div class="buy" onclick="mostrar('img3')">COMPRAR</div>
+<img id="img3" src="https://i.postimg.cc/zGkVNj2b/IMG-4300.png">
+</div>
+
+<!-- RESEÑAS -->
+<div id="reviews" class="page">
+<h2>Reseñas</h2>
+<div class="review-box">
+Todas las reseñas están en TikTok y Discord.
+</div>
+</div>
+
+<!-- FAQ -->
+<div id="faq" class="page">
+<h2>FAQ</h2>
+<p><b>Tiempo:</b> 15–35 minutos</p>
+<p><b>Seguro:</b> Sí</p>
+<p><b>PC:</b> Windows</p>
+<p><b>Contacto:</b> Discord mbg_rockettt</p>
+</div>
+
+<!-- DISCORD -->
+<div id="discord" class="page">
+<h2>Discord</h2>
+<div class="contact-box">
+<p>Únete a la comunidad</p>
+<div class="contact-tag">Soporte • Updates</div>
+<p class="contact-discord">mbg_rockettt</p>
+
+<a class="buy" href="https://discord.gg/7FH994Ax" target="_blank">
+UNIRSE
+</a>
+</div>
+</div>
+
+<!-- CONTACTO -->
+<div id="consultas" class="page">
+<h2>Contacto</h2>
+<div class="contact-box">
+<p>Soporte rápido por Discord</p>
+<p class="contact-discord">mbg_rockettt</p>
+</div>
+</div>
+
+<script>
+function show(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+
+function mostrar(id){
+document.querySelectorAll('img').forEach(i=>i.style.display='none');
+document.getElementById(id).style.display='block';
+}
+
+function goPacks(){
+document.getElementById('intro').style.display='none';
+show('packs');
+}
+</script>
+
+</body>
+</html>
